@@ -39,6 +39,25 @@ const Middle = (props) => {
     setInputData(event.target.value);
   }
 
+  function createCustomer() {
+    var customer = {
+      CustomerID: inputData,
+      CompanyName: "quang",
+    };
+
+    fetch("https://localhost:7000/api/home/add-customer", {
+      method: "POST",
+      headers: {
+        "Content-type": "Application/json",
+      },
+      body: JSON.stringify(customer),
+    })
+      .then((r) => r.json())
+      .then((e) => {
+        console.log(e);
+      });
+  }
+
   return (
     <React.Fragment>
       {/* <input type="text" ref={inputRef} />
@@ -50,14 +69,23 @@ const Middle = (props) => {
         Send back to father
       </button> */}
 
-      <input type="text" value={inputData} onChange={handleChange} />
+      <input
+        type="text"
+        value={inputData}
+        onChange={handleChange}
+        maxLength={5}
+      />
+      <br />
       <button
         onClick={() => {
           props.callBack(inputData);
         }}
       >
-        Send back to father
+        Send back to father and DB
       </button>
+      <br />
+      <button onClick={createCustomer}>Create Customer</button>
+      <br />
     </React.Fragment>
   );
 };

@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Middle from "./Middle.jsx";
 import { Link } from "react-router-dom";
 
 function HomePage(props) {
   const [data, setData] = useState("");
 
+  useEffect(() => {
+    fetch("https://localhost:7000/api/home/init")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
+
   const getData = (newData) => {
     setData(newData);
   };
+
   return (
     <div>
       <h1>Home page</h1>
