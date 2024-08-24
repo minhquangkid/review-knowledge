@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Middle from "./Middle.jsx";
+import { Link } from "react-router-dom";
 
 function HomePage(props) {
   const [data, setData] = useState("");
@@ -15,7 +16,8 @@ function HomePage(props) {
       <p>This below is child content</p>
       <p>{data}</p>
       <br />
-      <Middle callBack={getData}></Middle>
+      <Middle callBack={getData} />
+      <Link to="/contact">Go to Contact page</Link>
     </div>
   );
 }
