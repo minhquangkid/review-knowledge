@@ -16,6 +16,17 @@ namespace Review.Controllers
             _context = context;
         }
 
+        //https://exercism.org/tracks/csharp/exercises/elons-toys/edit
+        [HttpGet("RemoteControlCar")]
+        public async Task<IActionResult> RemoteControlCar()
+        {
+            var car = RemoteCar.Buy();
+           var test =  car.BatteryDisplay();
+            // => "Battery at 100%"
+
+            return Ok(test);
+        }
+
         //https://exercism.org/tracks/csharp/exercises/squeaky-clean/edit
         [HttpGet("SqueakyClean")]
         public async Task<IActionResult> SqueakyClean(string identifier)
