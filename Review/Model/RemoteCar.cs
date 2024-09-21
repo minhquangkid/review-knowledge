@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Principal;
 
 namespace Review.Model
 {
@@ -16,6 +18,7 @@ namespace Review.Model
 
         public static RemoteCar Buy()
         {
+            
             return new RemoteCar();
         }
 
@@ -36,6 +39,7 @@ namespace Review.Model
                 _batterPercentDigit--;
             }
         }
+
 
     }
 }
