@@ -16,6 +16,22 @@ namespace Review.Controllers
             _context = context;
         }
 
+        //https://exercism.org/tracks/csharp/exercises/booking-up-for-beauty/edit
+        [HttpGet("work-with-datetime")]
+        public async Task<IActionResult> WorkWithDateTime()
+        {
+           var appointment1 = Appointment.Schedule("7/25/2019 13:45:00");
+
+            var test2 = new DateTime(2019, 03, 29, 15, 0, 0);
+
+            var d = $"You have an appointment on {test2.ToString("%M/%d/yyyy %h:mm:ss tt")}."; // dấu % để rút gọn tức là nếu là tháng 3 thì nó ghi 3 chứ ko phải 03
+
+            DateTime dateNow = DateTime.Now;
+            DateTime customDate = new DateTime(dateNow.Year, 9, 15);
+
+            return Ok(d);
+        }
+
         //https://exercism.org/tracks/csharp/exercises/elons-toys/edit
         [HttpGet("RemoteControlCar")]
         public async Task<IActionResult> RemoteControlCar()
