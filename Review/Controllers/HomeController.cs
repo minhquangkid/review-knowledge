@@ -16,8 +16,17 @@ namespace Review.Controllers
             _context = context;
         }
 
-        //https://exercism.org/tracks/csharp/exercises/booking-up-for-beauty/edit
-        [HttpGet("work-with-datetime")]
+        //https://exercism.org/tracks/csharp/exercises/international-calling-connoisseur
+        [HttpGet("work-with-dictionary")]
+        public async Task<IActionResult> WorkWithDictionary()
+        {
+          var result =  DialingCodes.FindLongestCountryName(DialingCodes.GetExistingDictionary());
+
+            return Ok(result);
+        }
+
+            //https://exercism.org/tracks/csharp/exercises/booking-up-for-beauty/edit
+            [HttpGet("work-with-datetime")]
         public async Task<IActionResult> WorkWithDateTime()
         {
            var appointment1 = Appointment.Schedule("7/25/2019 13:45:00");
