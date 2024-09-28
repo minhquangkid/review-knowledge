@@ -1,0 +1,18 @@
+https://itviec.com/it-jobs/full-stack-developer-net-core-c-typescript-vue-3-omnia-systems-company-limited-5633
+-----------------------------------------------------
+https://topdev.vn/detail-jobs/frontend-software-engineer-net-angular-html-motorola-solutions-vietnam-r-d-center-2034339
+--------------------------------------------------
+tasks to do :
+
+using .NET and/or .NET Framework and Angular (including TypeScript and RxJS).
+Experience with C#, ASP.NET MVC, and Web API.
+Must have strong knowledge of front-end technologies including HTML5, CSS3, and JavaScript.
+
+- review relationship between tables, primary key,... one to one, one to many,...
+- Learn how to introduce yourself and talk to GPT
+- know about authentication,JWT,....OOP
+- Review SQL server query
+
+- find out about the company
+- Review angular, cycle life, async,...
+- which is IIS ? 

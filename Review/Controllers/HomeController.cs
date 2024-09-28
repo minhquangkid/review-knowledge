@@ -3,6 +3,8 @@ using Review.Model;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using static Review.Model.LogLine;
+using LogLevel = Review.Model.LogLine.LogLevel;
 
 namespace Review.Controllers
 {
@@ -14,6 +16,36 @@ namespace Review.Controllers
         public HomeController(MyDbContext context)
         {
             _context = context;
+        }
+
+        // https://exercism.org/tracks/csharp/exercises/logs-logs-logs/edit
+        [HttpGet("work-with-enum-loglevel")]
+        public async Task<IActionResult> WorkWithEnumLogLevel()
+        {
+            LogLevel a =  LogLine.ParseLogLevel("[INF]: File deleted");
+
+            Console.WriteLine(a); //  sẽ ra INF
+
+            //return Ok(a); // nhưng return api sẽ là 2
+
+            return Ok(a.ToString()); // dùng cách này để chuyển về string là INF
+        }
+
+
+        [HttpGet("work-with-enum")]
+        public async Task<IActionResult> WorkWithEnum()
+        {
+            Season  a = Season.Autumn; // a đang có kiểu là enum, ko phải string
+
+            var test = $"Integral value of {a} is {(int)a}"; // print ra a sẽ là string, (int)a là ép kiểu về int
+
+            var b = (Season)1; // ép kiểu int về enum Season
+            Console.WriteLine(b);  // output: Summer
+
+            var c = (Season)4;
+            Console.WriteLine(c);  // output: 4
+
+            return Ok(test);
         }
 
         //https://exercism.org/tracks/csharp/exercises/international-calling-connoisseur
